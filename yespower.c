@@ -35,18 +35,18 @@
 #include "yespower-opt.c"
 
 
-static const yespower_params_t v1 = {YESPOWER_0_5, 4096, 16, "Client Key", 10};
+//static const yespower_params_t v1 = {YESPOWER_0_5, 4096, 16, "Client Key", 10};
 
 static const yespower_params_t v2 = {YESPOWER_0_9, 2048, 32, NULL, 0};
 
 int yespower_hash(const char *input, char *output)
 {
-    uint32_t time = le32dec(&input[68]);
-    if (time > 1530403200) {
+//    uint32_t time = le32dec(&input[68]);
+//    if (time > 1530403200) {
         yespower_tls(input, 80, &v2, (yespower_binary_t *) output);
-    } else {
-        yespower_tls(input, 80, &v1, (yespower_binary_t *) output);
-    }
+//    } else {
+//        yespower_tls(input, 80, &v1, (yespower_binary_t *) output);
+//    }
     
     for(int j = 0; j < 16; j++){  // reverse output
         int t = output[j];
