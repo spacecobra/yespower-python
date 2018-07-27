@@ -104,7 +104,7 @@ PyMODINIT_FUNC PyInit_yespower(void) {
 
 #else
 
-PyMODINIT_FUNC init_yespower(void) {
+PyMODINIT_FUNC inityespower(void) {
     (void) Py_InitModule("yespower", YespowerMethods);
 }
 #endif
